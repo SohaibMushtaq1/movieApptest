@@ -8,7 +8,7 @@ import More from './More';
 import MediaLibrary from './MediaLibrary';
 import { HEIGHT, WIDTH } from '../constants/size';
 
-const Main = () => {
+const Main = ({navigation}) => {
   const data = [
     {
       id: 1,
@@ -35,13 +35,13 @@ const Main = () => {
   const screens = () => {
     switch (selected) {
       case "DashBorad":
-        return <Dashboard />;
+        return <Dashboard navigation={navigation}/>;
       case "Watch":
-        return <Watch />;
+        return <Watch navigation={navigation}/>;
       case "Media Library":
-        return <MediaLibrary />;
+        return <MediaLibrary navigation={navigation}/>;
       case "More":
-        return <More />;
+        return <More navigation={navigation}/>;
       default:
         return;
     }
